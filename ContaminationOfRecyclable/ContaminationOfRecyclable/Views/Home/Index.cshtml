@@ -5,12 +5,79 @@
 <div class="jumbotron">
     <br />
     <div>
-        <img src="~/Images/RecycleBanner.jpg"  />
+        <img src="~/Images/RecycleBanner.jpg" />
     </div>
     <h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
     <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+
+    </p>
+</figure>
+
+
+<script>
+    $(document).ready(function () {
+        $.getJSON("/Home/GetData", function (data) {
+            var periods = []
+            var contamination_rates = []
+
+            for (var i = 0; i < data.length; i++) {
+                periods.push(data[i].period);
+                contamination_rates.push(data[i].rate)
+            }
+
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'spline'
+                },
+                title: {
+                    text: 'Kerbside recyclables, contamination rate, Victoria 2001–02 to 2019–20',
+                    align: 'left'
+                },
+                xAxis: {
+                    categories: periods,
+                    accessibility: {
+                        description: 'Year'
+                    }
+                },
+                yAxis: {
+                    title: {
+                        text: 'Contamination Rate (%)'
+                    },
+                },
+                tooltip: {
+                    crosshairs: true,
+                    shared: true
+                },
+                plotOptions: {
+                    spline: {
+                        marker: {
+                            radius: 4,
+                            lineColor: '#666666',
+                            lineWidth: 1
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Contamination',
+                    data: contamination_rates
+                }]
+            });
+
+        })
+    })
+</script>
 
 <div class="row">
     <div class="col-md-6">
