@@ -27,7 +27,7 @@ namespace ContaminationOfRecyclable
                       "~/Scripts/DataTables/dataTables.bootstrap.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-readable.min.css",
                       "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Datatables/css").Include(
