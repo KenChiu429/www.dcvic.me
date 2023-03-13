@@ -308,9 +308,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\Monash.jpg" />
+    <Content Include="Images\ClothingAndTextiles.png" />
+    <Content Include="Images\ConstructionandDemolitionWaste.png" />
+    <Content Include="Images\E-waste.png" />
+    <Content Include="Images\GardenWaste.png" />
+    <Content Include="Images\HazardousHouseholdWaste.png" />
     <Content Include="Images\MonashResize.jpg" />
     <Content Include="Images\RecycleBanner.jpg" />
+    <Content Include="Images\SoftPlasticWaste.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\DataTables\css\semanticui.scss" />
