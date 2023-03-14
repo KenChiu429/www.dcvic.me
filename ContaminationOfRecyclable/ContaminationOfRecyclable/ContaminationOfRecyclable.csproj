@@ -309,6 +309,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Banner.png" />
     <Content Include="Images\ClothingAndTextiles.png" />
     <Content Include="Images\ConstructionandDemolitionWaste.png" />
     <Content Include="Images\E-waste.png" />
